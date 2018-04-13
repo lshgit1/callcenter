@@ -1,20 +1,7 @@
 <?php
 include_once('./_common.php');
 
-$mb_no = $member[mb_no];
-if(!$mb_no || $mb_no < 1) alert($_errArray[13][$sesslang]); //매장이 존재하지 않습니다
-
-$agsql = " select * from g5_member where mb_level='8' and is_agent = 'y' and ag_code='{$member[ag_code]}' ";
-$ag = sql_fetch($agsql);
-
-if(!$ag['mb_no']) alert($_errArray[13][$sesslang]); //매장이 존재하지 않습니다
-$ag_mb_no = $ag['mb_no'];
-
-// 매장직원그룹
-$gsql = " select * from g5_member where ag_code = '{$ag['ag_code']}' and mb_level < '{$ag[mb_level]}' and mb_level > '1' "; 
-$gresult = sql_query($gsql);
-
-$g5['title'] = $_txtArray[332][$sesslang]; //매장정보
+$g5['title'] = "매장정보"; //매장정보
 
 include_once(G5_ERP_PATH.'/_head.php');
 include_once(G5_ERP_PATH.'/ml_layer.php');
