@@ -3,18 +3,23 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 if (G5_IS_MOBILE) { include_once(G5_MOBILE_PATH.'/tail.php'); return;}
 ?>
 
-    </div><!--wrapper-->
-</div><container>
+        </div><!--wrapper-->
 
-<footer id="ft">
-    <p>
-        Copyright © http://www.cherry-case.com All rights reserved.<br>
-        <a href="#">Go to Top</a>
-    </p>
-</footer>
+        <footer id="ft">
+            <p>
+                Copyright © http://www.domain.com All rights reserved.<br>
+                <a href="#">Go to Top</a>
+            </p>
+        </footer>
+
+    </div><!--wrapper-->
+
+</div><!--wrapper-->
+
+<!--
 <div class='lsh-toast'></div>
 <div class="loadimgWrap"><img src="<?php echo G5_IMG_URL;?>/loading_now.gif" class="loadimg"></div>
-
+-->
 <?php if ($config['cf_analytics']) { echo $config['cf_analytics'];}?>
 
 <!-- } 하단 끝 -->
@@ -24,10 +29,7 @@ if (G5_IS_MOBILE) { include_once(G5_MOBILE_PATH.'/tail.php'); return;}
 <script>
 $(function() {
     // 폰트 리사이즈 쿠키있으면 실행
-    var font_resize_act = get_cookie("ck_font_resize_act");
-    if(font_resize_act != "") {
-        font_resize("container", font_resize_act);
-    }
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
 });
 
 // 검색어 체크
