@@ -4,7 +4,7 @@ include_once('./_common.php');
 $g5['title'] = "매장정보"; //매장정보
 
 include_once(G5_ERP_PATH.'/_head.php');
-include_once(G5_ERP_PATH.'/ml_layer.php');
+//include_once(G5_ERP_PATH.'/ml_layer.php');
 ?>
 
 <style>
