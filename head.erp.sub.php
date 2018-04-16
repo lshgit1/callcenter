@@ -42,6 +42,8 @@ if (G5_IS_MOBILE) {
 if($config['cf_add_meta'])  echo $config['cf_add_meta'].PHP_EOL;
 ?>
 <title><?php echo $g5_head_title; ?></title>
+<link rel="stylesheet" href="<?php echo G5_JS_URL ?>/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="<?php echo G5_PLUGIN_URL ?>/scrollbar/css/jquery.mCustomScrollbar.css?ver=<?php echo G5_CSS_VER; ?> ">
 <link rel="stylesheet" href="<?php echo G5_ERP_URL; ?>/css/admin.css">
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
@@ -66,7 +68,6 @@ var g5_admin_url = "<?php echo G5_ADMIN_URL; ?>";
 <script src="<?php echo G5_JS_URL ?>/common.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/wrest.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <script src="<?php echo G5_JS_URL ?>/placeholders.min.js"></script>
-<link rel="stylesheet" href="<?php echo G5_JS_URL ?>/font-awesome/css/font-awesome.min.css">
 <?php if(G5_IS_MOBILE) { ?>
 <script src="<?php echo G5_JS_URL ?>/modernizr.custom.70111.js"></script>
 <?php } ?>

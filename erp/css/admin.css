@@ -53,7 +53,10 @@ h2{font-size: 1.083em;font-weight: bold;margin:10px 0}
 #tnb .tnb_shop:hover{background-color:#2b3d9f}
 
 /*gnb*/
+/*
 #gnb{position:fixed;top:0;left:0;max-width:220px;height:100%;padding-top:50px;z-index:999}
+*/
+#gnb{position:fixed;top:0;left:0;max-width:220px;width:220px;height:100%;padding-top:50px;z-index:999}
 #gnb h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 /*
 #gnb .gnb_ul{position:relative;height:100%;background:#ebebeb;width:50px}
@@ -83,13 +86,12 @@ h2{font-size: 1.083em;font-weight: bold;margin:10px 0}
     -moz-box-shadow: 2px 0 2px  rgba(150,150,150,0.1);
     box-shadow: 2px 0 2px  rgba(150,150,150,0.1);}
 */
-#gnb .gnb_oparea{display:none;position:absolute;top:0;left:0px;background:#fff;height:100%;width:220px;padding:20px;border-right:1px solid #dbdbdb;
-    -webkit-box-shadow: 2px 0 2px  rgba(150,150,150,100.1);
-    -moz-box-shadow: 2px 0 2px  rgba(150,150,150,0.1);
-    box-shadow: 2px 0 2px  rgba(150,150,150,0.1);}
+#gnb .gnb_oparea{display:none;position:absolute;top:0;left:0px;background:#fff;height:100%;width:220px;padding:20px;border-right:1px solid #dbdbdb;}
 
-
+/*
 #gnb .on .gnb_oparea{display:block}
+*/
+#gnb .on .gnb_oparea{display:block;}
 #gnb .gnb_oparea h3{margin-bottom:10px;line-height:18px;font-size:1.17em}
 #gnb .gnb_oparea li{line-height:28px}
 #gnb .gnb_oparea li a{color:#555}
@@ -780,3 +782,18 @@ td.td_grpset {width:160px;border-left:1px solid #e9ecee;text-align:center}
     /* Styles */
     input[type="text"]{max-width:200px}
 }
+
+
+/*콜센터 추가*/
+/*========공통==========*/
+/*Scrollbar*/
+.mCustomScrollBox{height:100%;padding:0px;}
+.mCS-autoHide > .mCustomScrollBox > .mCSB_scrollTools, .mCS-autoHide > .mCustomScrollBox ~ .mCSB_scrollTools {opacity: 0.4;right: -8px;}
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {background-color: #000;background-color: rgba(0,0,0,0.6);filter: "alpha(opacity=20)";-ms-filter: "alpha(opacity=20)";}
+.mCSB_container{padding:0;}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{width:2px;}
+
+
+/*========DB목록==========*/
+.cfg-btn-wrap{position: fixed;top:160px;right:5px;}
+.cfg-btn{cursor: pointer;}

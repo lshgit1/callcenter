@@ -1,3 +1,11 @@
+jQuery(document).ready(function() {
+    jQuery('.mCustomScrollbar').mCustomScrollbar({
+        theme:"minimal",
+        scrollInertia: 200,
+        scrollEasing: "linear"
+    });
+});
+
 function check_all(f)
 {
     var chk = document.getElementsByName("chk[]");
@@ -57,56 +65,30 @@ function is_checked(elements_name)
     return checked;
 }
 
-//***************************** 이랑추가 *******************************//
-$(function() {
-	//모달창 띄우기
-	$(document).on("click",".showmodal",function(){
-		//event.preventDefault();
-		var tgt = $(this).data("tgt");
-		var keyval = $(this).data("keyval");
-		show_modal('layerpopup2', tgt, keyval);
-	});
 
-	//모달창 닫기
-	$(document).on("click","#layermask",function(){
-		$("#layermask").fadeOut("fast");
-		$("#iframe_wrap2").html("").empty();  
-		$("#layerpopup2").hide();  
-		$("#iframe_wrap3").html("").empty();  
-		$("#layerpopup3").hide();  
-		$("#iframe_wrap4").html("").empty();  
-		$("#layerpopup4").hide();  
-		$("body").css("min-width","");
-	});
-});
+// 검색어 체크
+function fpdsearch_submit(f)
+{
+    /*
+    if (f.stx.value.length < 2)
+    {
+        alert("검색어는 두글자 이상 입력하십시오.");
+        f.stx.select();
+        f.stx.focus();
+        return false;
+    }
+    */
 
-// 언어세션 생성
-$(document).on("click",".swlang",function(){
-	//event.preventDefault();
-	var tgtlang = $(this).data("lang");
-
-	$.ajax({ 
-		type: "GET",
-		url: g5_url+"/erp/ajax_setsess_lang.php",
-		data: "lang="+tgtlang, 
-		beforeSend: function(){
-			loadstart();
-		},
-		success: function(msg){ 
-			var msgarray = $.parseJSON(msg);
-			if(msgarray.rslt == "error")
-			{
-				alert(msgarray.errcode); 
-				if(msgarray.errurl) {document.location.replace(msgarray.errurl);}
-				else {	loadend(); return false;}
-			}
-			else
-			{
-				document.location.reload();
-			}
-		},
-		complete: function(){
-			loadend();
-		}
-	});
-});
+    // 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
+    var cnt = 0;
+    for (var i=0; i<f.stx.value.length; i++) {
+        if (f.stx.value.charAt(i) == ' ')
+            cnt++;
+    }
+    if (cnt > 2) {
+        alert("빠른 검색을 위하여 검색어에 3개 단어만 입력할 수 있습니다.");
+        f.stx.select();
+        f.stx.focus();
+        return false;
+    }
+}
